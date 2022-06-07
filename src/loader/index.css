@@ -1,0 +1,6 @@
+/* @import './bg.less'; */
+@import './bg.css';
+body {
+  color: red;
+  display: flex;
+}

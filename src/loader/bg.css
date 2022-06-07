@@ -1,0 +1,13 @@
+body {
+  /* background-color: blue; */
+  /* transform: rotate(7deg); */
+  background-image: url(../assets/vancats.jpeg)
+}
+#box {
+  color: @color;
+  width: 375px;
+  height: 375px;
+  background: pink;
+  border: 5px solod #f23;
+  box-sizing: border-box;
+}
