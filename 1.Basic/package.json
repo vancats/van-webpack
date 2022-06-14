@@ -16,8 +16,11 @@
     "@babel/core": "^7.18.2",
     "@babel/plugin-proposal-class-properties": "^7.17.12",
     "@babel/plugin-proposal-decorators": "^7.18.2",
+    "@babel/plugin-transform-runtime": "^7.18.5",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
+    "@babel/runtime-corejs3": "^7.18.3",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
@@ -45,19 +48,20 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "core-js": "3",
     "html-webpack-externals-plugin": "^3.8.0",
     "lodash": "^4.17.21",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
-  "browserslost": {
+  "browserslist": {
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 1000 chrome version",
+      "last 10 firefox version",
+      "last 10 safari version"
     ],
     "production": [
-      ">0.2%"
+      ">1%"
     ]
   }
 }

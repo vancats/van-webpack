@@ -17,13 +17,13 @@ module.exports = (env) => {
     // mode: process.env.NODE_ENV,
     mode: 'development',
     // devtool: 'hidden-source-map', // 生产
-    devtool: false,
-    optimization: {
-      minimize: true,// 启用最小化
-      minimizer: [
-        new TerserPlugin(), // 以前是 UglifyJS
-      ]
-    },
+    devtool: 'source-map',
+    // optimization: {
+    //   minimize: true,// 启用最小化
+    //   minimizer: [
+    //     new TerserPlugin(), // 以前是 UglifyJS
+    //   ]
+    // },
     entry: {
       main: './src/index.js'
     },
@@ -97,7 +97,25 @@ module.exports = (env) => {
             options: {
               // ? 预设从前往后，装饰器从后往前
               presets: ['@babel/preset-env', '@babel/preset-react'], // 预设
+              // presets: [
+              //   [
+              //     '@babel/preset-env',
+              //     {
+              //       // useBuiltIns: false,
+              //       useBuiltIns: 'usage',
+              //       corejs: 3,
+              //     }
+              //   ]
+              //   , '@babel/preset-react'],
               plugins: [
+                ['@babel/plugin-transform-runtime', {
+                  corejs: 3,
+                  // 移除内联的babel helpers 并且替换为 @babel/runtime-corejs3，不再模块创建
+                  helpers: true,
+                  // 是否开启generator函数转换regenerator-runtime避免全局污染
+                  // 如果是true用自己实现一个generator而不是generatorRuntime
+                  regenerator: false,
+                }],
                 /**
                  * ! 两者顺序不能调换 并且如果 legacy 为 true，loose 也必须为 true
                  * * 类的装饰器
