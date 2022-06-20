@@ -8,6 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const CSSMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 
 console.log('process.env.NODE_ENV', process.env.NODE_ENV)
 module.exports = (env) => {
@@ -19,9 +20,10 @@ module.exports = (env) => {
     // devtool: 'hidden-source-map', // 生产
     devtool: 'source-map',
     // optimization: {
-    //   minimize: true,// 启用最小化
+    //   minimize: true,// 启用最小化，开发环境也支持使用
     //   minimizer: [
     //     new TerserPlugin(), // 以前是 UglifyJS
+    //     new CSSMinimizerWebpackPlugin()
     //   ]
     // },
     entry: {
@@ -95,7 +97,7 @@ module.exports = (env) => {
           use: {
             loader: 'babel-loader',
             options: {
-              // ? 预设从前往后，装饰器从后往前
+              // ? 预设从前往后，插件从后往前
               presets: ['@babel/preset-env', '@babel/preset-react'], // 预设
               // presets: [
               //   [
@@ -249,6 +251,7 @@ module.exports = (env) => {
       // })
       // // 新增内容到 main.js
       // new Webpack.SourceMapDevToolPlugin({
+      //   // url 指向 filename
       //   append: `\n//# sourceMappingURL=http://127.0.0.1:8080/[url]`,
       //   filename: '[file].map'
       // }),
