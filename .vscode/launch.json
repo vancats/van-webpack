@@ -1,0 +1,20 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Webpack",
+      "skipFiles": [
+        /// 跳过核心模块
+        "<node_internals>/**"
+      ],
+      /// 当前根目录
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/4.Flow/compiler/debugger.js",
+    }
+  ]
+}
