@@ -1,0 +1,12 @@
+@import "./global.css";
+
+.avatar {
+  width: 75px;
+  height: 75px;
+  background-image: url("./vancats.jpeg");
+  background-size: cover;
+}
+
+div {
+  color: white;
+}
