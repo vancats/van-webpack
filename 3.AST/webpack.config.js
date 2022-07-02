@@ -17,7 +17,7 @@ module.exports = {
             plugins: [
               /// 最通用的库 babel-plugin-import
               [
-                path.resolve(__dirname, 'plugins/bebel-plugin-import.js'),
+                path.resolve(__dirname, 'plugins/babel-plugin-import.js'),
                 {
                   library: 'lodash'
                   // libraries: ['lodash']
