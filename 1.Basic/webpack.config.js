@@ -9,6 +9,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CSSMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 
 console.log('process.env.NODE_ENV', process.env.NODE_ENV)
 module.exports = (env) => {
@@ -19,13 +20,14 @@ module.exports = (env) => {
     mode: 'development',
     // devtool: 'hidden-source-map', // 生产
     devtool: 'source-map',
-    // optimization: {
-    //   minimize: true,// 启用最小化，开发环境也支持使用
-    //   minimizer: [
-    //     new TerserPlugin(), // 以前是 UglifyJS
-    //     new CSSMinimizerWebpackPlugin()
-    //   ]
-    // },
+    optimization: {
+      minimize: true,// 启用最小化，开发环境也支持使用
+      minimizer: [
+        new TerserPlugin(), // 以前是 UglifyJS
+        // new CSSMinimizerWebpackPlugin(),
+        new OptimizeCssAssetsWebpackPlugin()
+      ]
+    },
     entry: {
       main: './src/index.js'
     },

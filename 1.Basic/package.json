@@ -52,6 +52,7 @@
     "core-js": "3",
     "html-webpack-externals-plugin": "^3.8.0",
     "lodash": "^4.17.21",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
