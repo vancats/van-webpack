@@ -1,0 +1,9 @@
+{
+  "name": "8.optimize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./main.js",
+  "browser": "./browser.js",
+  "module": "./module.js",
+  "chrome": "./chrome.js"
+}

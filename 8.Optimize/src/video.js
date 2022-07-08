@@ -1,0 +1,1 @@
+exports.video = 'video'
