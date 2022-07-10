@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "generateAnalyzeFile": "webpack --profile --json > stats.json",
+    "analyze": "webpack-bundle-analyzer --port 8888 ./dist/stats.json"
   },
   "keywords": [],
   "author": "",

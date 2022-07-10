@@ -140,7 +140,10 @@ module.exports = {
       resourceRegExp: /^\.\/locale/
     }),
     new FriendlyErrorsWebpackPlugin(),
-    // new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin({
+      analyserMode: 'disabled', /// 不启用展示打包报告的服务器
+      generateStatsFile: true, /// 生成 stats.json 文件
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:6].css'
     }),
