@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@babel/generator': ^7.18.2
@@ -81,6 +81,8 @@ packages:
     resolution: {integrity: sha512-YZWVaglMiplo7v8f1oMQ5ZPQr0vn7HPeZXxXWsxXJRjGVrzUFn9OxFQl1sb5wzfootjA/yChhW84BV+383FSOw==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.18.4
     dev: false
 
   /@babel/template/7.16.7:
@@ -292,7 +294,7 @@ packages:
       '@xtuc/long': 4.2.2
     dev: false
 
-  /@webpack-cli/configtest/1.2.0_ffd7cf999054608223b9fc836cf5004f:
+  /@webpack-cli/configtest/1.2.0_77l47gmqkrqiei5z7sbwz5iaj4:
     resolution: {integrity: sha512-4FB8Tj6xyVkyqjj1OaTqCjXYULB9FMkqQ8yGrZjRDrYh0nOE+7Lhs45WioWQQMV+ceFlE368Ukhe6xdvJM9Egg==}
     peerDependencies:
       webpack: 4.x.x || 5.x.x
@@ -962,7 +964,7 @@ packages:
         optional: true
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
-      '@webpack-cli/configtest': 1.2.0_ffd7cf999054608223b9fc836cf5004f
+      '@webpack-cli/configtest': 1.2.0_77l47gmqkrqiei5z7sbwz5iaj4
       '@webpack-cli/info': 1.5.0_webpack-cli@4.10.0
       '@webpack-cli/serve': 1.7.0_webpack-cli@4.10.0
       colorette: 2.0.19
